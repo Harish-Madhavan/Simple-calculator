@@ -10,10 +10,16 @@ win.title("Calculator")
 def display_text():
    global entry
    string= entry.get()
-   if(string.isalpha()):
+   if(string.isalpha() and string!="x"):
       label.configure(text="enter numbers")
    else:
-      string1=eval(string)
+      a=""
+      for i in string:
+         if i=="x":
+            a+="*"
+         else:
+            a+=i
+      string1=eval(a)
       label.configure(text=string1)
 
 #Initialize a Label to display the User Input
